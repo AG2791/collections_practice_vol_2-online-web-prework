@@ -22,15 +22,10 @@ end
   end 
   
  
-  def count_elements(array)
+def count_elements(array)
 
-  count = Hash.new(0)
- 
-  array.each { |i| counts[i] += 1 }
-  return_array = []
-  counts.each do |i,num| 
-    i.each { |key, val| return_array << {key => val, :count => num} 
+      array.uniq.each {|i| count = 0
+          array.each {|i2| if i2 == i then count += 1 end}
+          i[:count] = count}
   end
-  return_array
-end
 
