@@ -21,8 +21,15 @@ end
     array.keep_if { |i| (i.is_a? String ) }
   end 
   
+ 
   def count_elements(array)
 
-  array.count("blake") 
-
- end 
+  count = Hash.new(0)
+ 
+  array.each { |i| counts[i] += 1 }
+  return_array = []
+  counts.each do |i,num| 
+    i.each { |key, val| return_array << {key => val, :count => num} 
+  end
+  return_array
+end
